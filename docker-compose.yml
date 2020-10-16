@@ -1,0 +1,14 @@
+version: '3'
+services:
+  front:
+    build:
+      context: .
+      dockerfile: front/Dockerfile
+    container_name: daerps_front
+    volumes:
+      - ./front/src:/front/src
+      - ./front/public:/front/public
+      - ./front/package.json:/front/package.json
+    ports:
+      - "3000:3000"
+
